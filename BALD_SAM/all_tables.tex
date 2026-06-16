@@ -1,0 +1,500 @@
+
+% \end{table*}
+
+
+\begin{table*}[!t]
+\caption{Comparison of \textbf{BALD Laplace} and \textbf{Human} prompting across different data sources from the PointPrompt \cite{quesada2024pointprompt} dataset under IoU and Dice metrics. The reported summaries are endpoint improvement, AUC improvement from step 0, and mean improvement from step 0. The stronger method per metric is boldfaced, and BALD Laplace-best cells are highlighted with a subtle green tint. Datasets are ordered by the number of BALD Laplace wins across the six reported IoU/Dice summary cells.}
+\label{tab:BALD Laplace_vs_human_iou_dice}
+\centering
+\tiny
+\setlength{\tabcolsep}{2.2pt}
+\renewcommand{\arraystretch}{1.05}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{lS[table-format=1.3] S[table-format=1.3]S[table-format=1.3] S[table-format=1.3]S[table-format=1.3] S[table-format=1.3]S[table-format=1.3] S[table-format=1.3]S[table-format=1.3] S[table-format=1.3]S[table-format=1.3] S[table-format=1.3]}
+\toprule
+& \multicolumn{6}{c}{\textbf{IoU}}
+& \multicolumn{6}{c}{\textbf{Dice}} \\
+\cmidrule(lr){2-7}\cmidrule(lr){8-13}
+& \multicolumn{2}{c}{\textbf{Improvement($\uparrow$)}}
+& \multicolumn{2}{c}{\textbf{AUC ($\uparrow$)}}
+& \multicolumn{2}{c}{\textbf{Mean ($\uparrow$)}}
+& \multicolumn{2}{c}{\textbf{Improvement($\uparrow$)}}
+& \multicolumn{2}{c}{\textbf{AUC ($\uparrow$)}}
+& \multicolumn{2}{c}{\textbf{Mean ($\uparrow$)}} \\
+\cmidrule(lr){2-3}\cmidrule(lr){4-5}\cmidrule(lr){6-7}
+\cmidrule(lr){8-9}\cmidrule(lr){10-11}\cmidrule(lr){12-13}
+\textbf{Dataset}
+& {\textbf{Human}} & {\textbf{BALD Laplace}}& {\textbf{Human}} & {\textbf{BALD Laplace}}& {\textbf{Human}} & {\textbf{BALD Laplace}}& {\textbf{Human}} & {\textbf{BALD Laplace}}& {\textbf{Human}} & {\textbf{BALD Laplace}}& {\textbf{Human}} & {\textbf{BALD Laplace}} \\
+\midrule
+Bird & -0.273 & {\cellcolor{green!8}\textbf{0.035}} & -1.580 & {\cellcolor{green!8}\textbf{2.767}} & -0.123 & {\cellcolor{green!8}\textbf{0.023}} & -0.212 & {\cellcolor{green!8}\textbf{0.037}} & -1.288 & {\cellcolor{green!8}\textbf{3.160}} & -0.100 & {\cellcolor{green!8}\textbf{0.023}} \\
+Breast & -0.080 & {\cellcolor{green!8}\textbf{0.038}} & -0.816 & {\cellcolor{green!8}\textbf{1.209}} & -0.043 & {\cellcolor{green!8}\textbf{0.061}} & -0.072 & {\cellcolor{green!8}\textbf{0.072}} & -0.459 & {\cellcolor{green!8}\textbf{1.537}} & -0.025 & {\cellcolor{green!8}\textbf{0.079}} \\
+Chalk\_group & -0.122 & {\cellcolor{green!8}\textbf{0.234}} & 0.370 & {\cellcolor{green!8}\textbf{2.310}} & 0.015 & {\cellcolor{green!8}\textbf{0.121}} & -0.113 & {\cellcolor{green!8}\textbf{0.323}} & 0.310 & {\cellcolor{green!8}\textbf{3.257}} & 0.013 & {\cellcolor{green!8}\textbf{0.171}} \\
+Skin & -0.103 & {\cellcolor{green!8}\textbf{0.031}} & -0.733 & {\cellcolor{green!8}\textbf{1.103}} & -0.039 & {\cellcolor{green!8}\textbf{0.056}} & -0.105 & {\cellcolor{green!8}\textbf{0.066}} & -0.713 & {\cellcolor{green!8}\textbf{1.525}} & -0.038 & {\cellcolor{green!8}\textbf{0.078}} \\
+Stop\_sign & -0.017 & {\cellcolor{green!8}\textbf{0.094}} & -0.905 & {\cellcolor{green!8}\textbf{1.121}} & -0.046 & {\cellcolor{green!8}\textbf{0.058}} & 0.004 & {\cellcolor{green!8}\textbf{0.092}} & -0.437 & {\cellcolor{green!8}\textbf{1.028}} & -0.022 & {\cellcolor{green!8}\textbf{0.054}} \\
+Baseball\_bat & -0.127 & {\cellcolor{green!8}\textbf{-0.034}} & -0.449 & {\cellcolor{green!8}\textbf{-0.201}} & -0.026 & {\cellcolor{green!8}\textbf{-0.011}} & -0.109 & {\cellcolor{green!8}\textbf{-0.048}} & \textbf{-0.270} & -0.318 & \textbf{-0.016} & -0.017 \\
+Clock & \textbf{0.057} & -0.020 & 0.459 & {\cellcolor{green!8}\textbf{0.741}} & 0.024 & {\cellcolor{green!8}\textbf{0.037}} & \textbf{0.062} & -0.038 & 0.542 & {\cellcolor{green!8}\textbf{0.707}} & 0.029 & {\cellcolor{green!8}\textbf{0.034}} \\
+Tie & \textbf{0.083} & 0.008 & -1.035 & {\cellcolor{green!8}\textbf{0.152}} & -0.050 & {\cellcolor{green!8}\textbf{0.008}} & \textbf{0.124} & 0.018 & -0.775 & {\cellcolor{green!8}\textbf{0.325}} & -0.036 & {\cellcolor{green!8}\textbf{0.017}} \\
+Bus & -0.001 & {\cellcolor{green!8}\textbf{0.039}} & \textbf{1.015} & 0.567 & \textbf{0.051} & 0.029 & 0.015 & {\cellcolor{green!8}\textbf{0.092}} & \textbf{1.295} & 1.127 & \textbf{0.065} & 0.059 \\
+Cow & \textbf{0.127} & 0.102 & \textbf{2.374} & 1.436 & \textbf{0.122} & 0.074 & 0.121 & {\cellcolor{green!8}\textbf{0.141}} & \textbf{2.209} & 1.817 & \textbf{0.114} & 0.094 \\
+Cat & \textbf{0.022} & -0.093 & \textbf{-0.235} & -1.159 & \textbf{-0.011} & -0.060 & \textbf{0.032} & -0.062 & \textbf{-0.172} & -0.778 & \textbf{-0.008} & -0.040 \\
+Dog & \textbf{0.083} & -0.003 & \textbf{1.384} & 0.099 & \textbf{0.071} & 0.005 & \textbf{0.070} & 0.023 & \textbf{1.110} & 0.315 & \textbf{0.057} & 0.016 \\
+Dolphin\_above & \textbf{0.175} & -0.033 & \textbf{3.574} & -0.349 & \textbf{0.183} & -0.018 & \textbf{0.172} & -0.017 & \textbf{3.470} & -0.137 & \textbf{0.178} & -0.007 \\
+Dolphin\_below & \textbf{0.177} & 0.039 & \textbf{3.613} & 0.263 & \textbf{0.185} & 0.014 & \textbf{0.166} & 0.085 & \textbf{3.272} & 0.653 & \textbf{0.168} & 0.035 \\
+\midrule
+\textbf{Overall} & 0.000 & {\cellcolor{green!8}\textbf{0.031}} & 0.503 & {\cellcolor{green!8}\textbf{0.719}} & 0.023 & {\cellcolor{green!8}\textbf{0.028}} & 0.011 & {\cellcolor{green!8}\textbf{0.056}} & 0.578 & {\cellcolor{green!8}\textbf{1.016}} & 0.027 & {\cellcolor{green!8}\textbf{0.043}} \\
+\bottomrule
+\end{tabular}%
+}
+\end{table*}
+
+
+\begin{table*}[t]
+\centering
+\caption{Mean final IoU comparison across prompting strategies and datasets. One-shot prompting baselines are compared with human prompts, random prompts, and BALD Laplace. \colorbox{green!15}{Best} and \colorbox{yellow!15}{second-best} results are highlighted per dataset. Active prompting strategies are evaluated using their final full-budget performance.}
+\label{tab:miou_with_d2q}
+
+\footnotesize
+\setlength{\tabcolsep}{3.2pt}
+\renewcommand{\arraystretch}{1.12}
+
+\begin{tabular*}{\textwidth}{@{\extracolsep{\fill}} l c c c c c c c c @{}}
+\toprule
+\textbf{Category} 
+& \textbf{Human} 
+& \textbf{Random} 
+& \textbf{Saliency} 
+& \textbf{K-Medoids} 
+& \textbf{Entropy} 
+& \textbf{Max Dist.} 
+& \textbf{Shi-Tomasi} 
+& \textbf{BALD Laplace} \\
+\midrule
+
+Bird           
+& \cellcolor{yellow!15}$0.677 \pm 0.231$ 
+& $0.615 \pm 0.222$ 
+& $0.308 \pm 0.300$ 
+& $0.645 \pm 0.212$ 
+& $0.483 \pm 0.267$ 
+& $0.456 \pm 0.296$ 
+& $0.620 \pm 0.216$ 
+& \cellcolor{green!15}$0.795 \pm 0.167$ \\
+
+Breast         
+& \cellcolor{green!15}$0.750 \pm 0.126$ 
+& $0.621 \pm 0.237$ 
+& $0.438 \pm 0.336$ 
+& \cellcolor{yellow!15}$0.674 \pm 0.194$ 
+& $0.566 \pm 0.286$ 
+& $0.532 \pm 0.335$ 
+& $0.592 \pm 0.305$ 
+& $0.610 \pm 0.330$ \\
+
+Chalk group    
+& \cellcolor{green!15}$0.714 \pm 0.101$ 
+& $0.409 \pm 0.125$ 
+& $0.237 \pm 0.135$ 
+& \cellcolor{yellow!15}$0.441 \pm 0.118$ 
+& $0.308 \pm 0.143$ 
+& $0.299 \pm 0.129$ 
+& $0.425 \pm 0.121$ 
+& $0.340 \pm 0.172$ \\
+
+Clock          
+& \cellcolor{green!15}$0.814 \pm 0.181$ 
+& $0.745 \pm 0.209$ 
+& $0.432 \pm 0.338$ 
+& $0.735 \pm 0.205$ 
+& $0.680 \pm 0.262$ 
+& $0.692 \pm 0.265$ 
+& $0.715 \pm 0.223$ 
+& \cellcolor{yellow!15}$0.803 \pm 0.226$ \\
+
+Cow            
+& \cellcolor{green!15}$0.808 \pm 0.130$ 
+& $0.675 \pm 0.189$ 
+& $0.321 \pm 0.294$ 
+& $0.660 \pm 0.185$ 
+& $0.423 \pm 0.280$ 
+& $0.343 \pm 0.314$ 
+& $0.646 \pm 0.187$ 
+& \cellcolor{yellow!15}$0.805 \pm 0.198$ \\
+
+Dog            
+& \cellcolor{green!15}$0.848 \pm 0.102$ 
+& $0.742 \pm 0.166$ 
+& $0.436 \pm 0.320$ 
+& \cellcolor{yellow!15}$0.780 \pm 0.135$ 
+& $0.544 \pm 0.271$ 
+& $0.523 \pm 0.317$ 
+& $0.745 \pm 0.161$ 
+& \cellcolor{green!15}$0.848 \pm 0.162$ \\
+
+Dolphin above  
+& \cellcolor{green!15}$0.732 \pm 0.100$ 
+& $0.642 \pm 0.112$ 
+& $0.472 \pm 0.249$ 
+& $0.655 \pm 0.106$ 
+& $0.553 \pm 0.176$ 
+& $0.543 \pm 0.209$ 
+& $0.661 \pm 0.099$ 
+& \cellcolor{yellow!15}$0.705 \pm 0.129$ \\
+
+Dolphin below  
+& \cellcolor{green!15}$0.831 \pm 0.075$ 
+& $0.670 \pm 0.135$ 
+& $0.391 \pm 0.303$ 
+& \cellcolor{yellow!15}$0.714 \pm 0.114$ 
+& $0.473 \pm 0.254$ 
+& $0.430 \pm 0.315$ 
+& $0.681 \pm 0.108$ 
+& \cellcolor{green!15}$0.831 \pm 0.124$ \\
+
+Skin           
+& $0.593 \pm 0.195$ 
+& $0.593 \pm 0.196$ 
+& $0.375 \pm 0.295$ 
+& \cellcolor{yellow!15}$0.626 \pm 0.154$ 
+& $0.452 \pm 0.283$ 
+& $0.395 \pm 0.317$ 
+& $0.515 \pm 0.208$ 
+& \cellcolor{green!15}$0.693 \pm 0.230$ \\
+
+Stop sign      
+& \cellcolor{yellow!15}$0.886 \pm 0.132$ 
+& $0.839 \pm 0.169$ 
+& $0.550 \pm 0.384$ 
+& $0.848 \pm 0.158$ 
+& $0.773 \pm 0.248$ 
+& $0.726 \pm 0.314$ 
+& $0.640 \pm 0.273$ 
+& \cellcolor{green!15}$0.899 \pm 0.136$ \\
+
+Tie            
+& \cellcolor{yellow!15}$0.700 \pm 0.276$ 
+& $0.627 \pm 0.292$ 
+& $0.368 \pm 0.352$ 
+& $0.649 \pm 0.289$ 
+& $0.569 \pm 0.309$ 
+& $0.542 \pm 0.337$ 
+& $0.646 \pm 0.283$ 
+& \cellcolor{green!15}$0.739 \pm 0.277$ \\
+
+Baseball bat   
+& \cellcolor{green!15}$0.747 \pm 0.152$ 
+& $0.684 \pm 0.198$ 
+& $0.422 \pm 0.323$ 
+& $0.724 \pm 0.172$ 
+& $0.653 \pm 0.217$ 
+& $0.632 \pm 0.249$ 
+& $0.701 \pm 0.178$ 
+& \cellcolor{yellow!15}$0.743 \pm 0.175$ \\
+
+Bus            
+& \cellcolor{yellow!15}$0.803 \pm 0.144$ 
+& $0.593 \pm 0.196$ 
+& $0.158 \pm 0.190$ 
+& $0.636 \pm 0.172$ 
+& $0.359 \pm 0.260$ 
+& $0.289 \pm 0.277$ 
+& $0.548 \pm 0.204$ 
+& \cellcolor{green!15}$0.855 \pm 0.190$ \\
+
+Cat            
+& \cellcolor{green!15}$0.887 \pm 0.079$ 
+& $0.771 \pm 0.149$ 
+& $0.487 \pm 0.329$ 
+& $0.825 \pm 0.108$ 
+& $0.583 \pm 0.284$ 
+& $0.508 \pm 0.342$ 
+& $0.795 \pm 0.140$ 
+& \cellcolor{yellow!15}$0.885 \pm 0.105$ \\
+
+Polyp          
+& \cellcolor{yellow!15}$0.794 \pm 0.145$ 
+& $0.747 \pm 0.164$ 
+& $0.547 \pm 0.326$ 
+& $0.757 \pm 0.151$ 
+& $0.634 \pm 0.290$ 
+& $0.415 \pm 0.354$ 
+& $0.637 \pm 0.246$ 
+& \cellcolor{green!15}$0.810 \pm 0.198$ \\
+
+Salt dome      
+& \cellcolor{green!15}$0.844 \pm 0.096$ 
+& $0.513 \pm 0.141$ 
+& $0.273 \pm 0.177$ 
+& \cellcolor{yellow!15}$0.588 \pm 0.101$ 
+& $0.347 \pm 0.197$ 
+& $0.306 \pm 0.162$ 
+& $0.564 \pm 0.111$ 
+& $0.205 \pm 0.128$ \\
+
+\bottomrule
+\end{tabular*}
+\end{table*}
+
+
+
+
+\begin{table*}[!t]
+\caption{Overall summary (averaged across all datasets): endpoint improvement from $k{=}0$ to full prompt budget, AUC improvement from step 0, and mean improvement from step 0. All reported summaries are direction-aligned so that higher values are better. Bold = best non-GT strategy. Underline = better than GT-Based. Bold+Underline = best overall. \colorbox{green!15}{Green shading} highlights BALD-Laplace only when it is the best non-GT strategy in that column.}
+\label{tab:overall_summary}
+\centering
+\scriptsize
+\setlength{\tabcolsep}{2.8pt}
+\renewcommand{\arraystretch}{1.08}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{@{}l S[table-format=1.3]S[table-format=2.3]S[table-format=1.3] S[table-format=1.3]S[table-format=1.3]S[table-format=1.3] S[table-format=2.3]S[table-format=3.3]S[table-format=2.3] S[table-format=1.3]S[table-format=2.3]S[table-format=1.3]@{}}
+\toprule
+& \multicolumn{3}{c}{IoU} & \multicolumn{3}{c}{ECE} & \multicolumn{3}{c}{HD95} & \multicolumn{3}{c}{NLL} \\
+\cmidrule(lr){2-4} \cmidrule(lr){5-7} \cmidrule(lr){8-10} \cmidrule(lr){11-13}
+Strategy & {Improv.\,($\uparrow$)} & {AUC \,($\uparrow$)} & {Mean \,($\uparrow$)} & {Improv.\,($\uparrow$)} & {AUC \,($\uparrow$)} & {Mean \,($\uparrow$)} & {Improv.\,($\uparrow$)} & {AUC \,($\uparrow$)} & {Mean \,($\uparrow$)} & {Improv.\,($\uparrow$)} & {AUC \,($\uparrow$)} & {Mean \,($\uparrow$)} \\
+\midrule
+BALD-Lap. & \cellcolor{green!8}\underline{\bfseries0.081} & \cellcolor{green!8}\underline{\bfseries1.442} & \cellcolor{green!8}\underline{\bfseries0.074} & \cellcolor{green!8}\underline{\bfseries0.097} & \underline{1.449} & \cellcolor{green!8}\underline{\bfseries0.075} & \cellcolor{green!8}\underline{\bfseries-5.271} & \cellcolor{green!8}\underline{\bfseries0.543} & \cellcolor{green!8}\underline{\bfseries-0.105} & \cellcolor{green!8}\underline{\bfseries0.328} & 4.894 & \underline{0.253} \\
+BALD-MCD & -0.001 & 0.431 & 0.022 & 0.043 & 0.842 & 0.043 & \underline{-21.483} & -196.109 & -10.343 & 0.200 & 3.244 & 0.167 \\
+Entropy & -0.001 & 0.493 & 0.025 & 0.036 & 0.715 & 0.037 & -23.026 & \underline{-111.810} & \underline{-6.166} & 0.214 & 3.214 & 0.166 \\
+Random & -0.073 & 0.572 & 0.027 & 0.029 & \underline{\bfseries1.466} & \underline{0.074} & -52.582 & -303.023 & -16.466 & 0.221 & \underline{\bfseries5.331} & \underline{\bfseries0.272} \\
+MaxDist & -0.158 & -2.145 & -0.111 & 0.004 & -0.222 & -0.011 & -62.903 & -909.404 & -47.043 & 0.158 & 1.205 & 0.064 \\
+\midrule
+GT-Based & 0.029 & 0.819 & 0.042 & 0.069 & 1.272 & 0.065 & -21.636 & -150.408 & -8.061 & 0.297 & 4.899 & 0.252 \\
+\bottomrule
+\end{tabular}%
+}
+\end{table*}
+
+
+
+
+\begin{table*}[!t]
+\caption{Fixed-rival paired statistical comparison for baseline SAM1 medical active prompting. BALD-Laplace is compared against the same four non-GT baselines in every metric column. $\Delta$ is direction-aligned so that positive values favor BALD-Laplace and negative values favor the rival. The reported summaries are endpoint improvement, AUC improvement from step 0, and mean improvement from step 0. \colorbox{green!8}{Green shading} marks comparisons where the point estimate favors BALD-Laplace. Reported are the paired mean difference, bootstrap 95\% CI over images, and two-sided sign-flip permutation $p$-value.}
+\label{tab:overall_summary_fixed_rivals_stats}
+\centering
+\tiny
+\setlength{\tabcolsep}{2.5pt}
+\renewcommand{\arraystretch}{0.92}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{@{}ll c@{}!{\color{black!20}\vrule}c c@{}!{\color{black!20}\vrule}c c@{}!{\color{black!20}\vrule}c@{}}
+\toprule
+& & \multicolumn{2}{c}{\textbf{Improvement}} & \multicolumn{2}{c}{\textbf{AUC}} & \multicolumn{2}{c}{\textbf{Mean}} \\
+\cmidrule(lr){3-4}\cmidrule(lr){5-6}\cmidrule(lr){7-8}
+\textbf{Metric} & \textbf{BALD-Laplace vs.} & \boldmath$\Delta$ \textbf{[95\% CI]} & \boldmath$p$ & \boldmath$\Delta$ \textbf{[95\% CI]} & \boldmath$p$ & \boldmath$\Delta$ \textbf{[95\% CI]} & \boldmath$p$ \\
+\midrule
+\multirow{4}{*}{IoU} & BALD-MCD & \cellcolor{green!8}$0.082\,[0.069,\,0.096]$ & $<\!10^{-4}$ & \cellcolor{green!8}$1.011\,[0.867,\,1.160]$ & $<\!10^{-4}$ & \cellcolor{green!8}$0.053\,[0.045,\,0.060]$ & $<\!10^{-4}$ \\
+ & Entropy & \cellcolor{green!8}$0.083\,[0.065,\,0.100]$ & $<\!10^{-4}$ & \cellcolor{green!8}$0.948\,[0.742,\,1.160]$ & $<\!10^{-4}$ & \cellcolor{green!8}$0.049\,[0.039,\,0.060]$ & $<\!10^{-4}$ \\
+ & Random & \cellcolor{green!8}$0.154\,[0.136,\,0.173]$ & $<\!10^{-4}$ & \cellcolor{green!8}$0.870\,[0.674,\,1.064]$ & $<\!10^{-4}$ & \cellcolor{green!8}$0.047\,[0.037,\,0.057]$ & $<\!10^{-4}$ \\
+ & MaxDist & \cellcolor{green!8}$0.240\,[0.222,\,0.257]$ & $<\!10^{-4}$ & \cellcolor{green!8}$3.586\,[3.364,\,3.810]$ & $<\!10^{-4}$ & \cellcolor{green!8}$0.185\,[0.174,\,0.197]$ & $<\!10^{-4}$ \\
+\midrule
+\multirow{4}{*}{ECE} & BALD-MCD & \cellcolor{green!8}$0.054\,[0.047,\,0.061]$ & $<\!10^{-4}$ & \cellcolor{green!8}$0.607\,[0.523,\,0.691]$ & $<\!10^{-4}$ & \cellcolor{green!8}$0.032\,[0.027,\,0.036]$ & $<\!10^{-4}$ \\
+ & Entropy & \cellcolor{green!8}$0.061\,[0.053,\,0.069]$ & $<\!10^{-4}$ & \cellcolor{green!8}$0.734\,[0.618,\,0.851]$ & $<\!10^{-4}$ & \cellcolor{green!8}$0.038\,[0.032,\,0.044]$ & $<\!10^{-4}$ \\
+ & Random & \cellcolor{green!8}$0.068\,[0.060,\,0.076]$ & $<\!10^{-4}$ & $-0.017\,[-0.116,\,0.084]$ & $0.7491$ & \cellcolor{green!8}$0.001\,[-0.004,\,0.006]$ & $0.7435$ \\
+ & MaxDist & \cellcolor{green!8}$0.093\,[0.085,\,0.100]$ & $<\!10^{-4}$ & \cellcolor{green!8}$1.671\,[1.553,\,1.792]$ & $<\!10^{-4}$ & \cellcolor{green!8}$0.086\,[0.080,\,0.092]$ & $<\!10^{-4}$ \\
+\midrule
+\multirow{4}{*}{HD95} & BALD-MCD & \cellcolor{green!8}$16.212\,[13.378,\,19.055]$ & $<\!10^{-4}$ & \cellcolor{green!8}$196.652\,[164.776,\,228.340]$ & $<\!10^{-4}$ & \cellcolor{green!8}$10.238\,[8.596,\,11.891]$ & $<\!10^{-4}$ \\
+ & Entropy & \cellcolor{green!8}$17.755\,[13.422,\,22.108]$ & $<\!10^{-4}$ & \cellcolor{green!8}$112.353\,[63.346,\,162.626]$ & $<\!10^{-4}$ & \cellcolor{green!8}$6.062\,[3.476,\,8.577]$ & $<\!10^{-4}$ \\
+ & Random & \cellcolor{green!8}$47.311\,[43.446,\,51.175]$ & $<\!10^{-4}$ & \cellcolor{green!8}$303.566\,[260.581,\,345.930]$ & $<\!10^{-4}$ & \cellcolor{green!8}$16.361\,[14.238,\,18.560]$ & $<\!10^{-4}$ \\
+ & MaxDist & \cellcolor{green!8}$57.632\,[53.924,\,61.402]$ & $<\!10^{-4}$ & \cellcolor{green!8}$909.947\,[865.322,\,954.553]$ & $<\!10^{-4}$ & \cellcolor{green!8}$46.938\,[44.623,\,49.220]$ & $<\!10^{-4}$ \\
+\midrule
+\multirow{4}{*}{NLL} & BALD-MCD & \cellcolor{green!8}$0.128\,[0.113,\,0.143]$ & $<\!10^{-4}$ & \cellcolor{green!8}$1.649\,[1.447,\,1.858]$ & $<\!10^{-4}$ & \cellcolor{green!8}$0.086\,[0.075,\,0.096]$ & $<\!10^{-4}$ \\
+ & Entropy & \cellcolor{green!8}$0.114\,[0.098,\,0.130]$ & $<\!10^{-4}$ & \cellcolor{green!8}$1.680\,[1.417,\,1.945]$ & $<\!10^{-4}$ & \cellcolor{green!8}$0.087\,[0.074,\,0.100]$ & $<\!10^{-4}$ \\
+ & Random & \cellcolor{green!8}$0.107\,[0.092,\,0.122]$ & $<\!10^{-4}$ & $-0.437\,[-0.652,\,-0.229]$ & $0.0001$ & $-0.019\,[-0.030,\,-0.008]$ & $0.0005$ \\
+ & MaxDist & \cellcolor{green!8}$0.170\,[0.156,\,0.184]$ & $<\!10^{-4}$ & \cellcolor{green!8}$3.689\,[3.427,\,3.951]$ & $<\!10^{-4}$ & \cellcolor{green!8}$0.189\,[0.175,\,0.202]$ & $<\!10^{-4}$ \\
+\bottomrule
+\end{tabular}%
+}
+\end{table*}
+
+
+
+\begin{table}[!t]
+\caption{Overall stepwise scores (averaged across all datasets) at selected prompt budgets.
+Each entry reports the raw metric value at that prompt count, not a trajectory summary.
+Bold = best non-GT strategy. Underline = better than GT-Based. Bold+Underline = best overall.
+\colorbox{green!8}{Green shading} highlights BALD-Laplace only when it is the best non-GT strategy in that column.}
+\label{tab:overall_scores}
+\centering
+\footnotesize
+\setlength{\tabcolsep}{2.5pt}
+\renewcommand{\arraystretch}{1.02}
+\resizebox{\columnwidth}{!}{%
+\begin{tabular}{@{}ll*{4}{S[table-format=3.3]}@{}}
+\toprule
+Metric & Strategy & {$k{=}5$} & {$k{=}10$} & {$k{=}15$} & {Full} \\
+\midrule
+
+\multirow{6}{*}{IoU\,($\uparrow$)}
+& BALD-Lap. & \underline{0.628} & {\cellcolor{green!8}\bfseries\underline{0.620}} & {\cellcolor{green!8}\bfseries\underline{0.619}} & {\cellcolor{green!8}\bfseries\underline{0.616}} \\
+& BALD-MCD & 0.576 & 0.566 & 0.552 & 0.534 \\
+& Entropy  & 0.584 & 0.574 & 0.546 & 0.533 \\
+& Random   & {\bfseries\underline{0.660}} & \underline{0.581} & 0.491 & 0.462 \\
+& MaxDist  & 0.458 & 0.424 & 0.388 & 0.376 \\
+\cmidrule(lr){2-6}
+& GT-Based & 0.600 & 0.585 & 0.572 & 0.563 \\
+
+\midrule
+
+\multirow{6}{*}{ECE\,($\downarrow$)}
+& BALD-Lap. & 0.253 & {\cellcolor{green!8}\bfseries\underline{0.243}} & {\cellcolor{green!8}\bfseries\underline{0.237}} & {\cellcolor{green!8}\bfseries\underline{0.234}} \\
+& BALD-MCD & 0.278 & 0.277 & 0.280 & 0.288 \\
+& Entropy  & 0.283 & 0.283 & 0.291 & 0.295 \\
+& Random   & {\bfseries\underline{0.199}} & \underline{0.248} & 0.285 & 0.302 \\
+& MaxDist  & 0.347 & 0.324 & 0.321 & 0.327 \\
+\cmidrule(lr){2-6}
+& GT-Based & 0.252 & 0.255 & 0.258 & 0.262 \\
+
+\midrule
+
+\multirow{6}{*}{HD95\,($\downarrow$)}
+& BALD-Lap. & \underline{56.908} & {\cellcolor{green!8}\bfseries\underline{69.485}} & {\cellcolor{green!8}\bfseries\underline{71.551}} & {\cellcolor{green!8}\bfseries\underline{71.579}} \\
+& BALD-MCD & 68.724 & 78.309 & 83.514 & 87.791 \\
+& Entropy  & 61.874 & 70.502 & 81.868 & 89.334 \\
+& Random   & {\bfseries\underline{53.676}} & 79.601 & 109.034 & 118.890 \\
+& MaxDist  & 101.148 & 119.025 & 130.065 & 129.210 \\
+\cmidrule(lr){2-6}
+& GT-Based & 60.358 & 78.115 & 84.248 & 87.944 \\
+
+\midrule
+
+\multirow{6}{*}{NLL\,($\downarrow$)}
+& BALD-Lap. & 0.455 & 0.406 & {\cellcolor{green!8}\bfseries\underline{0.386}} & {\cellcolor{green!8}\bfseries\underline{0.379}} \\
+& BALD-MCD & 0.532 & 0.503 & 0.496 & 0.506 \\
+& Entropy  & 0.536 & 0.500 & 0.497 & 0.493 \\
+& Random   & {\bfseries\underline{0.330}} & {\bfseries\underline{0.401}} & 0.458 & 0.486 \\
+& MaxDist  & 0.686 & 0.566 & 0.542 & 0.548 \\
+\cmidrule(lr){2-6}
+& GT-Based & 0.439 & 0.411 & 0.406 & 0.409 \\
+
+\bottomrule
+\end{tabular}%
+}
+\end{table}
+
+
+\begin{table*}[!t]
+\caption{Strata dominance analysis: \textbf{Mean Improvement} scores for BALD-Laplace, BALD-MCDropout, and Entropy across morphological strata. Best value per stratum--metric is set in bold, and BALD-Laplace winning cells are highlighted with a subtle green tint. All entries are direction-aligned so that higher values are better.}
+\label{tab:strata_dominance}
+\centering
+\scriptsize
+\setlength{\tabcolsep}{2.5pt}
+\renewcommand{\arraystretch}{1.05}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{@{}ll S[table-format=1.3]S[table-format=1.3]S[table-format=1.3] S[table-format=1.3]S[table-format=1.3]S[table-format=1.3] S[table-format=2.3]S[table-format=2.3]S[table-format=2.3] S[table-format=1.3]S[table-format=1.3]S[table-format=1.3]@{}}
+\toprule
+& & \multicolumn{3}{c}{IoU \,($\uparrow$)} & \multicolumn{3}{c}{ECE \,($\uparrow$)} & \multicolumn{3}{c}{HD95 \,($\uparrow$)} & \multicolumn{3}{c}{NLL \,($\uparrow$)} \\
+\cmidrule(lr){3-5} \cmidrule(lr){6-8} \cmidrule(lr){9-11} \cmidrule(lr){12-14}
+Stratum Family & Level & {BALD Laplace} & {BALD MCD} & {Entropy} & {BALD Laplace} & {BALD MCD} & {Entropy} & {BALD Laplace} & {BALD MCD} & {Entropy} & {BALD Laplace} & {BALD MCD} & {Entropy} \\
+\midrule
+\multirow{3}{*}{Boundary Complexity} & Moderate & \cellcolor{green!8}\bfseries 0.090 & 0.049 & 0.021 & \cellcolor{green!8}\bfseries 0.138 & 0.081 & 0.075 & \cellcolor{green!8}\bfseries 8.566 & 1.422 & -4.674 & \cellcolor{green!8}\bfseries 0.420 & 0.289 & 0.278 \\
+ & Simple & \cellcolor{green!8}\bfseries 0.075 & 0.021 & 0.025 & \cellcolor{green!8}\bfseries 0.072 & 0.042 & 0.035 & \cellcolor{green!8}\bfseries -0.985 & -11.054 & -6.487 & \cellcolor{green!8}\bfseries 0.243 & 0.163 & 0.161 \\
+ & Complex & -0.004 & -0.005 & \bfseries -0.001 & \cellcolor{green!8}\bfseries 0.101 & 0.029 & 0.032 & \cellcolor{green!8}\bfseries 31.396 & 5.397 & 8.716 & \cellcolor{green!8}\bfseries 0.454 & 0.165 & 0.191 \\
+\midrule
+\multirow{3}{*}{Contrast} & Low & \cellcolor{green!8}\bfseries 0.098 & 0.050 & 0.031 & \cellcolor{green!8}\bfseries 0.109 & 0.066 & 0.057 & \cellcolor{green!8}\bfseries 12.231 & -0.222 & -3.932 & \cellcolor{green!8}\bfseries 0.365 & 0.254 & 0.253 \\
+ & Medium & \cellcolor{green!8}\bfseries 0.062 & 0.001 & 0.023 & \cellcolor{green!8}\bfseries 0.056 & 0.031 & 0.026 & -9.189 & -18.907 & \bfseries -7.658 & \cellcolor{green!8}\bfseries 0.188 & 0.117 & 0.117 \\
+ & High & \cellcolor{green!8}\bfseries 0.029 & 0.008 & -0.001 & \cellcolor{green!8}\bfseries 0.017 & 0.004 & -0.005 & \cellcolor{green!8}\bfseries -2.597 & -3.729 & -7.813 & \cellcolor{green!8}\bfseries 0.090 & 0.049 & 0.033 \\
+\midrule
+\multirow{3}{*}{Thinness} & Compact & \cellcolor{green!8}\bfseries 0.075 & 0.021 & 0.025 & \cellcolor{green!8}\bfseries 0.072 & 0.042 & 0.035 & \cellcolor{green!8}\bfseries -1.002 & -11.091 & -6.484 & \cellcolor{green!8}\bfseries 0.243 & 0.162 & 0.161 \\
+ & Moderate & \cellcolor{green!8}\bfseries 0.093 & 0.059 & 0.022 & \cellcolor{green!8}\bfseries 0.142 & 0.087 & 0.077 & \cellcolor{green!8}\bfseries 9.246 & 2.739 & -4.715 & \cellcolor{green!8}\bfseries 0.432 & 0.309 & 0.285 \\
+ & Thin & -0.004 & -0.005 & \bfseries -0.001 & \cellcolor{green!8}\bfseries 0.101 & 0.029 & 0.032 & \cellcolor{green!8}\bfseries 31.396 & 5.397 & 8.716 & \cellcolor{green!8}\bfseries 0.454 & 0.165 & 0.191 \\
+\midrule
+\multirow{3}{*}{Object Size} & Medium & \cellcolor{green!8}\bfseries 0.117 & 0.055 & 0.017 & \cellcolor{green!8}\bfseries 0.102 & 0.062 & 0.040 & \cellcolor{green!8}\bfseries 12.413 & -1.423 & -7.253 & \cellcolor{green!8}\bfseries 0.343 & 0.232 & 0.202 \\
+ & Small & \cellcolor{green!8}\bfseries 0.040 & 0.015 & -0.070 & \cellcolor{green!8}\bfseries 0.035 & 0.020 & -0.027 & \cellcolor{green!8}\bfseries 8.302 & 2.795 & -16.865 & \cellcolor{green!8}\bfseries 0.111 & 0.074 & -0.009 \\
+ & Large & 0.019 & -0.028 & \bfseries 0.062 & 0.045 & 0.021 & \bfseries 0.049 & -21.197 & -27.251 & \bfseries -1.715 & 0.154 & 0.094 & \bfseries 0.158 \\
+\bottomrule
+\end{tabular}%
+}
+\end{table*}
+
+
+
+\begin{table}[t]
+\centering
+\caption{Single next-prompt evaluation under a fixed shared seed of size $k$ for the three uncertainty-based strategies only. All strategies start from the same $k$ shared-seed prompts; each then selects one additional location according to its own acquisition rule. \textbf{Mean} IoU, ECE, HD95, and NLL are reported over the medical test set. \textbf{Bold} = best non-GT strategy. \underline{Underline} = better than GT-based. \textbf{\underline{Bold+Underline}} = best overall. Green shading highlights BALD Laplace only when it is the best non-GT strategy in that column.}
+\label{tab:shared_seed_next_prompt_trio}
+\setlength{\tabcolsep}{5pt}
+\begin{tabular}{llcccc}
+\toprule
+$k$ & Strategy & IoU$\uparrow$ & ECE$\downarrow$ & HD95$\downarrow$ & NLL$\downarrow$ \\
+\midrule
+\multirow{4}{*}{3}
+  & BALD Laplace    & {\cellcolor{green!8}\bfseries 0.432} & {\cellcolor{green!8}\bfseries 0.429} & 97.6 & {\cellcolor{green!8}\bfseries 0.946} \\
+  & BALD MC Dropout & 0.413                            & 0.441                            & 100.6 & 0.980 \\
+  & Entropy         & 0.420                            & 0.431                            & {\bfseries 96.2} & 0.953 \\
+\midrule
+  & GT-based        & 0.460                            & 0.396                            & 87.6 & 0.842 \\
+\midrule
+\multirow{4}{*}{5}
+  & BALD Laplace    & {\cellcolor{green!8}\bfseries 0.400} & 0.455                            & {\cellcolor{green!8}\bfseries 106.7} & 1.003 \\
+  & BALD MC Dropout & 0.389                            & 0.462                            & 109.1 & 1.022 \\
+  & Entropy         & 0.393                            & {\bfseries 0.452}                & 107.3 & {\bfseries 0.994} \\
+\midrule
+  & GT-based        & 0.425                            & 0.423                            & 99.6 & 0.903 \\
+\midrule
+\multirow{4}{*}{8}
+  & BALD Laplace    & {\cellcolor{green!8}\bfseries 0.319} & {\cellcolor{green!8}\bfseries 0.491} & {\cellcolor{green!8}\bfseries 126.3} & {\cellcolor{green!8}\bfseries 1.073} \\
+  & BALD MC Dropout & 0.310                            & 0.497                            & 127.0 & 1.090 \\
+  & Entropy         & 0.302                            & 0.495                            & 127.9 & 1.074 \\
+\midrule
+  & GT-based        & 0.333                            & 0.472                            & 124.9 & 1.006 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+
+
+\begin{table*}[t]
+\centering
+\caption{IoU-based comparison of SAM1, SAM2, and SAM3 after the first random prompt and after BALD-based interactive prompting. The first prompt is random, so IoU@0 is reported once before either BALD strategy starts. For consistency with the other gain-based summary tables, trajectory summaries are reported as endpoint improvement and AUC improvement from step 0, while the raw endpoint score is reported explicitly as final IoU at the full prompting budget. Higher is better for all reported quantities. Best values within each row are shown in bold.}
+\label{tab:sam123_iou_comparison}
+
+\footnotesize
+\setlength{\tabcolsep}{8pt}
+\renewcommand{\arraystretch}{1.15}
+
+\begin{tabular}{llccc}
+\toprule
+\textbf{Prompting Setting}
+& \textbf{Metric}
+& \textbf{SAM1}
+& \textbf{SAM2}
+& \textbf{SAM3} \\
+\midrule
+
+\textbf{First random prompt}
+& IoU@0 \textbf{(before strategy starts)}
+& 0.534
+& 0.684
+& \textbf{0.718} \\
+\midrule
+
+\multirow{3}{*}{\textbf{BALD Laplace}}
+& Final IoU
+& 0.616
+& \textbf{0.697}
+& 0.427 \\
+& Improvement (IoU)
+& \textbf{0.081}
+& 0.013
+& -0.291 \\
+& AUC Improvement (IoU)
+& \textbf{1.442}
+& -0.075
+& -2.821 \\
+\midrule
+
+\multirow{3}{*}{\textbf{BALD MC-Dropout}}
+& Final IoU
+& 0.534
+& \textbf{0.631}
+& 0.333 \\
+& Improvement (IoU)
+& \textbf{-0.001}
+& -0.052
+& -0.385 \\
+& AUC Improvement (IoU)
+& \textbf{0.431}
+& -1.377
+& -4.130 \\
+
+\bottomrule
+\end{tabular}
+\end{table*}

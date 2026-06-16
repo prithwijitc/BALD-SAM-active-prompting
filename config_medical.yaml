@@ -1,0 +1,62 @@
+data:
+  images_root: /mnt/HD_18T_pt2/medical_data/images
+  masks_root: /mnt/HD_18T_pt2/medical_data/masks
+  project_root: /mnt/HD_18T_pt2/medical_data
+  split_seed: 123
+  train_frac: 0.80
+  val_frac: 0.10
+  test_frac: 0.10
+
+prompt_generation:
+  num_promptsets_train: 10
+  num_promptsets_val: 4
+  num_promptsets_test: 4
+  min_pairs: 1
+  max_pairs: 10
+  prompt_seed: 777
+  gaussian_sigma: 8
+
+sam:
+  checkpoint: /home/prithwijit/BALD/sam_vit_h_4b8939.pth
+  model_type: vit_h
+  device: cuda:1
+  multimask_output: true
+  select_by: sam_score
+
+head:
+  variant: no_image
+  channels_in: 3
+  hidden_channels: 16
+
+training:
+  batch_size: 64
+  num_epochs: 50
+  lr: 0.001
+  weight_decay: 0.0001
+  dice_lambda: 1.0
+  num_workers: 8
+  amp: true
+  early_stop_patience: 10
+  logit_clip: 20.0
+  target_size: [256, 256]
+  scheduler: cosine
+  scheduler_min_lr: 1.0e-6
+  scheduler_plateau_patience: 3
+  prefetch_factor: 2
+
+hdf5:
+  use_hdf5: true
+  chunk_size: 64
+
+laplace:
+  enabled: true
+  target_layer: final_conv
+  approx: diagonal
+  prior_precision_grid: [0.0001, 0.001, 0.01, 0.1, 1.0, 10.0]
+  bald_prior_precision: auto
+
+wandb:
+  enabled: false
+  project: laplace-head-sam-medical
+  entity: null
+  group: null

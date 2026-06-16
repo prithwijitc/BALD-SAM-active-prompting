@@ -1,0 +1,56 @@
+# Python/cache
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.ipynb_checkpoints/
+
+# Local environments
+.env
+.venv/
+venv/
+env/
+
+# Experiment tracking and local logs
+wandb/
+logs/
+*.log
+
+# Generated pipeline artifacts
+manifests/
+prompt_sets/
+sam_precompute/
+training_data/
+checkpoints/
+laplace/
+reports/
+active_prompting/
+sam_runs/
+
+# Heavy model/checkpoint/data artifacts
+*.pt
+*.pth
+*.ckpt
+*.h5
+*.hdf5
+*.npy
+*.npz
+*.pkl
+*.pickle
+*.tar
+*.tar.gz
+*.tgz
+*.zip
+!KvasirSEG.zip
+!ISIC2018_masks.zip
+
+# F3 seismic work is intentionally not part of this initial public repo.
+f3_sam_uncertainty_v3/
+Story/
+Story_TGRS/
+Story_TGRS.md
+
+# Local assistant/editor metadata
+.claude/
+CLAUDE.md

@@ -1,0 +1,76 @@
+# Config for running active_prompting on new datasets
+# (camouflage, cracks, salient objects, dichotomous segmentation)
+#
+# BEFORE RUNNING: Update all paths below to match your machine.
+#   - data.datasets_root: parent folder containing CAMO/, COD10K/, etc.
+#   - data.project_root:  output folder for manifests + results
+#   - data.head_checkpoint: direct path to best.pt (no symlinks needed)
+#   - data.laplace_dir: direct path to laplace artifacts dir
+#   - sam.checkpoint:     path to sam_vit_h_4b8939.pth
+
+data:
+  # Root containing dataset folders, each with Images/ and Masks/ subdirs
+  datasets_root: /path/to/Datasets
+  # Output folder (manifests, active_prompting results, plots)
+  project_root: /path/to/newdata_output
+  # Direct paths to trained head and Laplace artifacts (no symlinks needed)
+  head_checkpoint: /path/to/checkpoints/no_image/run_v3/best.pt
+  laplace_dir: /path/to/laplace/no_image/run_v3
+  split_seed: 123
+  train_frac: 0.80
+  val_frac: 0.10
+  test_frac: 0.10
+
+prompt_generation:
+  num_promptsets_train: 10
+  num_promptsets_val: 4
+  num_promptsets_test: 4
+  min_pairs: 1
+  max_pairs: 10
+  prompt_seed: 777
+  gaussian_sigma: 8
+
+sam:
+  checkpoint: /home/prithwijit/BALD/sam_vit_h_4b8939.pth
+  model_type: vit_h
+  device: cuda
+  multimask_output: true
+  select_by: sam_score
+
+head:
+  variant: no_image
+  channels_in: 3
+  hidden_channels: 16
+
+training:
+  batch_size: 64
+  num_epochs: 50
+  lr: 0.001
+  weight_decay: 0.0001
+  dice_lambda: 1.0
+  num_workers: 8
+  amp: true
+  early_stop_patience: 10
+  logit_clip: 20.0
+  target_size: [256, 256]
+  scheduler: cosine
+  scheduler_min_lr: 1.0e-6
+  scheduler_plateau_patience: 3
+  prefetch_factor: 2
+
+hdf5:
+  use_hdf5: true
+  chunk_size: 64
+
+laplace:
+  enabled: true
+  target_layer: final_conv
+  approx: diagonal
+  prior_precision_grid: [0.0001, 0.001, 0.01, 0.1, 1.0, 10.0]
+  bald_prior_precision: auto
+
+wandb:
+  enabled: false
+  project: laplace-head-sam-newdata
+  entity: null
+  group: null
