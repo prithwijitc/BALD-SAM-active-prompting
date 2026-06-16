@@ -25,7 +25,24 @@ Excluded:
 - `f3_sam_uncertainty_v3/`
 - `Story_TGRS/`
 - `Story/`
-- W&B run logs, checkpoints, SAM precompute arrays, trained head checkpoints, Laplace posterior artifacts, and other generated heavy outputs.
+- W&B run logs, SAM precompute arrays, unrelated checkpoints/posteriors, and other generated heavy outputs.
+- CSVs from side analyses that do not feed `BALD_SAM/all_tables.tex`.
+
+## Included CSVs
+
+Only CSVs tied to `BALD_SAM/all_tables.tex` are tracked:
+
+- `active_prompting/run_v3/point_prompt/aggregate.csv`
+- `active_prompting/run_v3/point_prompt/per_group.csv`
+- `active_prompting/run_v3/point_prompt/per_stratum.csv`
+- `active_prompting/run_v3/point_prompt/step_results.csv`
+- `active_prompting/run_v3/Medical/aggregate.csv`
+- `active_prompting/run_v3/Medical/per_group.csv`
+- `active_prompting/run_v3/Medical/per_stratum.csv`
+- `active_prompting/run_v3/Medical/step_results.csv`
+- `Medical_Results/sam123_all_strategies/sam123_all_strategies_final_summary.csv`
+
+The separate `sam123_bald_laplace` and `sam123_bald_vs_mcd` CSVs are intentionally not tracked because their values are either duplicate side summaries or not directly used by `all_tables.tex`.
 
 ## Environment
 
@@ -110,7 +127,6 @@ python build_pointprompt_human_trajectory_and_compare.py
 python build_medical_bald_across_runs.py
 python build_medical_sam_story.py
 python build_active_prompting_experiment_report.py
-python plot_sam123_bald_laplace_comparison.py
 python plot_sam123_all_strategies_comparison.py
 ```
 
