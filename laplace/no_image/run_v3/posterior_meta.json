@@ -1,0 +1,21 @@
+{
+  "source_checkpoint": "/mnt/HD_18T_pt2/prithwijit/bald/checkpoints/no_image/run_v3/best.pt",
+  "target_layer": "final_conv",
+  "approx_type": "diagonal",
+  "likelihood": "bernoulli",
+  "subset_of_weights": "last_layer",
+  "chosen_prior_precision": 10.0,
+  "best_val_nll": 0.24596008881926537,
+  "selection_metric": "val_nll",
+  "prior_precision_grid": [
+    0.0001,
+    0.001,
+    0.01,
+    0.1,
+    1.0,
+    10.0
+  ],
+  "n_params": 17,
+  "bald_prior_precision": 100.1808967590332,
+  "source_checkpoint_md5": "2f911b8f104e4af70ba5d9bd9c8f0fc9"
+}

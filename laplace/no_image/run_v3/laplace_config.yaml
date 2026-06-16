@@ -1,0 +1,5 @@
+approx: diagonal
+chosen_prior_precision: 10.0
+likelihood: bernoulli
+subset_of_weights: last_layer
+target_layer: final_conv

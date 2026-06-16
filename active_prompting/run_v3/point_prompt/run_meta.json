@@ -1,0 +1,21 @@
+{
+  "run_id": "v3",
+  "budget": 20,
+  "mc_samples": 20,
+  "seeds": [
+    0
+  ],
+  "strategies": [
+    "bald_laplace",
+    "bald_mcdropout",
+    "entropy",
+    "random",
+    "maxdist",
+    "oracle"
+  ],
+  "exclusion_radius": 5,
+  "dropout_rate": 0.1,
+  "n_images": 640,
+  "timestamp": "2026-03-27 11:20:03",
+  "total_wall_time_s": 3208.8
+}

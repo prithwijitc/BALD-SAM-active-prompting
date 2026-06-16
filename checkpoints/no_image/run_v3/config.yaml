@@ -1,0 +1,63 @@
+data:
+  images_root: /mnt/HD_18T_pt2/prithwijit/pace_backup/pointprompt/Images
+  masks_root: /mnt/HD_18T_pt2/prithwijit/pace_backup/pointprompt/Masks
+  project_root: /mnt/HD_18T_pt2/prithwijit/bald
+  split_seed: 123
+  test_frac: 0.1
+  train_frac: 0.8
+  val_frac: 0.1
+hdf5:
+  chunk_size: 64
+  use_hdf5: true
+head:
+  channels_in: 3
+  hidden_channels: 16
+  variant: no_image
+laplace:
+  approx: diagonal
+  bald_prior_precision: auto
+  enabled: true
+  prior_precision_grid:
+  - 0.0001
+  - 0.001
+  - 0.01
+  - 0.1
+  - 1.0
+  - 10.0
+  target_layer: final_conv
+prompt_generation:
+  gaussian_sigma: 8
+  max_pairs: 10
+  min_pairs: 1
+  num_promptsets_test: 4
+  num_promptsets_train: 10
+  num_promptsets_val: 4
+  prompt_seed: 777
+sam:
+  checkpoint: /home/prithwijit/BALD/sam_vit_h_4b8939.pth
+  device: cuda:1
+  model_type: vit_h
+  multimask_output: true
+  select_by: sam_score
+training:
+  amp: true
+  batch_size: 64
+  dice_lambda: 1.0
+  early_stop_patience: 10
+  logit_clip: 20.0
+  lr: 0.001
+  num_epochs: 50
+  num_workers: 8
+  prefetch_factor: 2
+  scheduler: cosine
+  scheduler_min_lr: 1.0e-06
+  scheduler_plateau_patience: 3
+  target_size:
+  - 256
+  - 256
+  weight_decay: 0.0001
+wandb:
+  enabled: true
+  entity: null
+  group: null
+  project: laplace-head-sam

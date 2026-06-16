@@ -8,6 +8,14 @@ Included:
 
 - Frozen SAM/SAM2/SAM3 active prompting code.
 - Prompt-aware Bayesian head training and diagonal Laplace fitting.
+- v3 BALD active-prompting summary artifacts for the included domains:
+  - `active_prompting/run_v3/point_prompt/{aggregate,per_group,per_stratum,step_results}.csv`
+  - `active_prompting/run_v3/Medical/{aggregate,per_group,per_stratum,step_results}.csv`
+- The small v3 BALD head checkpoint and Laplace posterior:
+  - `checkpoints/no_image/run_v3/best.pt`
+  - `checkpoints/no_image/run_v3/config.yaml`
+  - `laplace/no_image/run_v3/laplace_state.pt`
+  - `laplace/no_image/run_v3/posterior_meta.json`
 - Medical and PointPrompt analysis scripts.
 - `BALD_SAM/all_tables.tex`, the paper table artifact to reproduce.
 - Root medical archives currently available in this workspace: `KvasirSEG.zip` and `ISIC2018_masks.zip`.
@@ -44,6 +52,14 @@ python train_no_image_head.py --config config.yaml --run_id v3
 python fit_laplace_no_image.py --config config.yaml --run_id v3
 ```
 
+The checked-in v3 artifacts can also be reused directly by setting:
+
+```yaml
+data:
+  head_checkpoint: checkpoints/no_image/run_v3/best.pt
+  laplace_dir: laplace/no_image/run_v3
+```
+
 The active prompting evaluation is then run with:
 
 ```bash
@@ -68,9 +84,11 @@ export BALD_ACTIVE_ROOT=/path/to/medical_data/active_prompting
 export BALD_RESULTS_ROOT=$PWD/Medical_Results
 export POINTPROMPT_RESULTS_ROOT="/path/to/pointprompt/Prompting results"
 export POINTPROMPT_MANIFEST=/path/to/bald/manifests/test.csv
-export POINTPROMPT_BALD_RUN=/path/to/bald/active_prompting/run_v3/point_prompt
+export POINTPROMPT_BALD_RUN=$PWD/active_prompting/run_v3/point_prompt
 export POINTPROMPT_OUT_DIR=/path/to/point_prompt_human_compare
 ```
+
+The checked-in v3 summary CSVs can be used directly for PointPrompt BALD-vs-human comparisons by setting `POINTPROMPT_BALD_RUN` as shown above. Medical scripts that expect a broader `BALD_ACTIVE_ROOT` can either point to a regenerated active-prompting root or to copied run folders with the same CSV schema.
 
 ## Rebuilding `BALD_SAM/all_tables.tex`
 

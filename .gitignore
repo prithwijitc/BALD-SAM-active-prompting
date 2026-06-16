@@ -28,6 +28,24 @@ reports/
 active_prompting/
 sam_runs/
 
+# Keep the v3 PointPrompt/medical summary CSVs used by the paper tables.
+!active_prompting/
+!active_prompting/run_v3/
+!active_prompting/run_v3/Medical/
+!active_prompting/run_v3/Medical/**
+!active_prompting/run_v3/point_prompt/
+!active_prompting/run_v3/point_prompt/**
+
+# Keep the small v3 BALD/Laplace head artifacts required by the paper tables.
+!checkpoints/
+!checkpoints/no_image/
+!checkpoints/no_image/run_v3/
+!checkpoints/no_image/run_v3/**
+!laplace/
+!laplace/no_image/
+!laplace/no_image/run_v3/
+!laplace/no_image/run_v3/**
+
 # Heavy model/checkpoint/data artifacts
 *.pt
 *.pth
@@ -44,6 +62,8 @@ sam_runs/
 *.zip
 !KvasirSEG.zip
 !ISIC2018_masks.zip
+!checkpoints/no_image/run_v3/*.pt
+!laplace/no_image/run_v3/*.pt
 
 # F3 seismic work is intentionally not part of this initial public repo.
 f3_sam_uncertainty_v3/
