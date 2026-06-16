@@ -1,6 +1,6 @@
 # Prompt-Aware Laplace Head on Frozen SAM
 
-A lightweight Bayesian segmentation refinement system built on top of frozen [Segment Anything Model (SAM)](https://github.com/facebookresearch/segment-anything). A small CNN head learns to refine SAM's predictions conditioned on prompt locations, and a diagonal Laplace approximation is fitted on its final layer for calibrated uncertainty estimation.
+A lightweight Bayesian segmentation refinement system built on top of frozen [Segment Anything Model (SAM)](https://github.com/facebookresearch/segment-anything) with Laplace fitting.
 
 This GitHub staging copy contains the PointPrompt and medical active-prompting code/results needed for `BALD_SAM/all_tables.tex`. F3 seismic code/results are intentionally not included in this initial release. See `REPRODUCIBILITY.md` for table-level reproduction notes and expected input artifacts.
 
